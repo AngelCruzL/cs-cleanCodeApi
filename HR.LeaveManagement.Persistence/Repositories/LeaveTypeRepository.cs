@@ -7,11 +7,8 @@ namespace HR.LeaveManagement.Persistence.Repositories;
 
 public class LeaveTypeRepository : GenericRepository<LeaveType>, ILeaveTypeRepository
 {
-  private readonly HrDatabaseContext _context;
-
   public LeaveTypeRepository(HrDatabaseContext context) : base(context)
   {
-    _context = context;
   }
 
   public async Task<bool> IsLeaveTypeUnique(string name)

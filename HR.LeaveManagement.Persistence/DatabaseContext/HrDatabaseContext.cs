@@ -6,12 +6,8 @@ namespace HR.LeaveManagement.Persistence.DatabaseContext;
 
 public class HrDatabaseContext : DbContext
 {
-  public HrDatabaseContext(DbContextOptions<HrDatabaseContext> options, DbSet<LeaveType> leaveTypes,
-    DbSet<LeaveAllocation> leaveAllocations, DbSet<LeaveRequest> leaveRequests) : base(options)
+  public HrDatabaseContext(DbContextOptions<HrDatabaseContext> options) : base(options)
   {
-    LeaveTypes = leaveTypes;
-    LeaveAllocations = leaveAllocations;
-    LeaveRequests = leaveRequests;
   }
 
   public DbSet<LeaveType> LeaveTypes { get; set; }

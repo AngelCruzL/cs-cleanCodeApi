@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  db:
+    container_name: hr_leave_management_db
+    image: mcr.microsoft.com/azure-sql-edge
+    cap_add: [ 'SYS_PTRACE' ]
+    ports:
+      - "1433:1433"
+    restart: always
+    volumes:
+      - azure-sql-edge-data:/var/opt/mssql
+    environment:
+      MSSQL_SA_PASSWORD: Secret123
+      ACCEPT_EULA: Y
+volumes:
+  azure-sql-edge-data:
